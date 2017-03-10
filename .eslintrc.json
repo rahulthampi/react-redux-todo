@@ -4,5 +4,13 @@
         "react",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "rules": {
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "comma-dangle": "off",
+        "eol-last": "off"
+    }
 }
