@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: `${path.resolve(__dirname, 'src')}/app/index.js`,
+  entry: `${path.resolve(__dirname, 'src')}/app/index.jsx`,
   output: {
     path: `${path.resolve(__dirname, 'public')}/app`,
     filename: 'react-redux-todo.js',
@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         include: [
           path.resolve(__dirname, 'src')
         ],
@@ -20,7 +20,14 @@ module.exports = {
         ],
         loader: 'babel-loader',
         options: {
-          presets: ['es2015', 'env']
+          presets: ['react', 'es2015', 'env'],
+          env: {
+            development: {
+              plugins: [
+                'transform-class-properties'
+              ]
+            }
+          }
         }
       },
       {
@@ -28,6 +35,9 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     hot: true,

@@ -1,16 +1,36 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb",
     "plugins": [
         "react",
         "jsx-a11y",
         "import"
     ],
+    "globals": {
+        "document": true
+    },
     "rules": {
+        "strict": 0,
         "semi": [
             "warn",
             "always"
         ],
         "comma-dangle": "off",
-        "eol-last": "off"
+        "eol-last": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/prefer-stateless-function": [
+            1,
+            {
+                "ignorePureComponents": true
+            }
+        ]
     }
 }
