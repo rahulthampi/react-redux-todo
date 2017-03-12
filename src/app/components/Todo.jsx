@@ -1,20 +1,15 @@
 import React, { PropTypes } from 'react';
 import Input from './Input';
-import Link from './Link';
+import Anchor from './Anchor';
 
 const Todo = ({ onClick, done, title }) => (
   <li>
-    {/* <a
-      href=""
-      onClick={() => onClick}
-      className={done ? 'taskCompleted' : ''}
-    >
-      {title}
-    </a>*/}
-    <Link
+    <Anchor
       onClick={onClick}
       class={done ? 'taskCompleted' : ''}
-    />
+    >
+      {title}
+    </Anchor>
     <Input
       value={title}
     />
